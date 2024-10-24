@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "discord": "^0.8.2",
+    "discord.js": "^14.16.2",
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3",
+    "universal-code": "^1.0.0"
+  }
+}
