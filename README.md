@@ -1,6 +1,6 @@
 # README do Projeto Yoky
 
-![Yoky Logo](https://imgur.com/IyA73v0)  <!-- Caso tenha um logo, adicione o link aqui -->
+![Yoky Logo](https://imgur.com/IyA73v0)
 
 ## Descrição
 
