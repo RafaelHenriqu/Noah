@@ -1,6 +1,9 @@
 # README do Projeto Yoky
 
-![Yoky Logo](https://imgur.com/IyA73v0)
+<div style="width: 100%; text-align: center;" title="Yoky">
+    <a href=""><img src="./Imgs/Readme photo/1.jpg" style="border-radius: 5px; width: 100px;"></a>
+</div>
+
 
 ## Descrição
 
