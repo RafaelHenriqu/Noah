@@ -1,0 +1,8 @@
+{
+    "Clear_Time_has_expired":"Sorry, Discord doesn't allow me to delete a message sent more than 14 days ago.",
+    "Clear_ERROR":"Error: We're sorry, but the /clear command only accepts numbers between 1 and 100.",
+    "Channel_Not_Configured":"Channel not configured",
+    "Not_nunber":"We only accept numbers",
+    "Not_Language":"Chosen Language Not currently available",
+    "Configuration_Commands":"/setlanguage to change language \n /noticec to configure the default notice channel"
+}

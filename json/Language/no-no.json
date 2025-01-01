@@ -1,0 +1,8 @@
+{
+    "Clear_Time_has_expired": "Beklager, men Discord lar meg ikke slette meldinger sendt for mer enn 14 dager siden.",
+    "Clear_ERROR": "Feil: Vi beklager, men kommandoen /clear godtar bare tall mellom 1 og 100.",
+    "Channel_Not_Configured": "Kanal ikke konfigurert",
+    "Not_nunber": "Vi godtar bare tall",
+    "Not_Language": "Valgt språk er ikke tilgjengelig for øyeblikket",
+    "Configuration_Commands": "/setlanguage for å endre språket \n /noticec for å konfigurere standard varselkanal"
+}

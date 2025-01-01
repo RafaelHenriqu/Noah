@@ -1,10 +1,13 @@
+const Config = require("./Settings")
+const LoadLanguage = () =>{
+    return Language = require(`../json/Language/${Config.ConfigJs.Language}.json`)
+}
 
-const Language = require("../json/Language/pt-br.json")
-const Config = require("../json/config.json")
 
 
 const Comandos_Simples = {
     Start:async function(Comando,Mensagem){
+        const Language = LoadLanguage()
         switch(Comando){
             case 'clear':
                 Quantidade = parseInt(Mensagem.content.split(" ")[1])
@@ -34,11 +37,44 @@ const Comandos_Simples = {
 }
 
 const Comandos_Privados = {
+    
     Start:function(Comandos,Mensagem,Client){
+        const Language = LoadLanguage()
         switch(Comandos){
-            case 'aviso':
-                 var Aviso = Mensagem.content.replace(/\/aviso/i,'').trim()
-                 Client.channels.cache.get(Config.Warning_Chat).send(Aviso);
+            case 'setlanguage':
+                var LanguageSelect = Mensagem.content.split(" ")[1]
+                var LanguageFolder = [] 
+                require("fs").readdir(require("path").join(__dirname, "../json/Language"),(error,arquivo)=>{
+                    if (error){
+                        return;
+                    }else{
+                        arquivo.forEach(Arquivo=>{
+                            var Arquivo = Arquivo.replace(".json","").trim()
+                            LanguageFolder.push(Arquivo)
+                        })
+                        if (LanguageFolder.includes(LanguageSelect)){
+                            Config.ConfigJs.Language = LanguageSelect
+                        }else{
+                            Mensagem.channel.send(Language.Not_Language)
+                        }
+                    }  
+                })                
+                break
+            case 'noticec':
+                var Channel_ID = Mensagem.content.split(" ")[1]
+                Config.ConfigJs.Warning_Chat = Channel_ID
+                break
+            case 'notice':
+                 var Aviso = Mensagem.content.replace(/\/notice/i,'').trim()
+                try{
+                    Client.channels.cache.get(Config.ConfigJs.Warning_Chat).send(Aviso);
+                    break
+                }catch{
+                    Mensagem.channel.send(Language.Channel_Not_Configured)
+                    break
+            }
+            case 'configs':
+                Mensagem.channel.send(Language.Configuration_Commands)
                 break
             default:
                 break

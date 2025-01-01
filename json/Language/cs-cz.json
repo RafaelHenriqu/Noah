@@ -1,0 +1,8 @@
+{
+    "Clear_Time_has_expired": "Omlouváme se, ale Discord mi neumožňuje smazat zprávy starší než 14 dní.",
+    "Clear_ERROR": "Chyba: Omlouváme se, ale příkaz /clear přijímá pouze čísla mezi 1 a 100.",
+    "Channel_Not_Configured": "Kanál není nakonfigurován",
+    "Not_nunber": "Přijímáme pouze čísla",
+    "Not_Language": "Vybraný jazyk není momentálně k dispozici",
+    "Configuration_Commands": "/setlanguage pro změnu jazyka \n /noticec pro konfiguraci výchozího oznámení kanálu"
+}

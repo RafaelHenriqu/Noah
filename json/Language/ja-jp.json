@@ -1,0 +1,8 @@
+{
+    "Clear_Time_has_expired": "申し訳ありませんが、Discordは14日以上前に送信されたメッセージを削除することを許可していません。",
+    "Clear_ERROR": "エラー：申し訳ありませんが、/clearコマンドは1から100の間の数字のみを受け付けます。",
+    "Channel_Not_Configured": "チャンネルが構成されていません",
+    "Not_nunber": "数字のみを受け付けます",
+    "Not_Language": "選択した言語は現在利用できません",
+    "Configuration_Commands": "/setlanguageで言語を変更します \n /noticecでデフォルトの通知チャンネルを設定します"
+}

@@ -29,11 +29,16 @@ const Web = {
         return Mysql_Connection;
 
     }
+}
+
+const ConfigJs = {
+    "Warning_Chat":1000000000000000,
+    "Language":'en-us'
     
 }
 
 
-
 module.exports={
     Web,
+    ConfigJs,
 }

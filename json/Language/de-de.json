@@ -1,0 +1,8 @@
+{
+    "Clear_Time_has_expired": "Entschuldigung, aber Discord erlaubt mir nicht, Nachrichten zu löschen, die älter als 14 Tage sind.",
+    "Clear_ERROR": "Fehler: Wir entschuldigen uns, aber der Befehl /clear akzeptiert nur Zahlen zwischen 1 und 100.",
+    "Channel_Not_Configured": "Kanal nicht konfiguriert",
+    "Not_nunber": "Wir akzeptieren nur Zahlen",
+    "Not_Language": "Die gewählte Sprache ist derzeit nicht verfügbar",
+    "Configuration_Commands": "/setlanguage um die Sprache zu ändern \n /noticec um den Standardbenachrichtigungskanal zu konfigurieren"
+}
