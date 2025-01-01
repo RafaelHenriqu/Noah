@@ -1,37 +1,54 @@
+
 const Language = require("../json/Language/pt-br.json")
-const Settings = require("./Settings")
+const Config = require("../json/config.json")
 
 
 const Comandos_Simples = {
+    Start:async function(Comando,Mensagem){
+        switch(Comando){
+            case 'clear':
+                Quantidade = parseInt(Mensagem.content.split(" ")[1])
+                if (isNaN(Quantidade) || Quantidade < 1){Mensagem.channel.send(Language.Clear_ERROR)
+                    break
+                }
+                if (Quantidade >= 100){
+                    QuantidadeMaxima = await Mensagem.channel.messages.fetch({limit:100})
+                    QuantidadeMaxima = parseInt(QuantidadeMaxima.size)
+                    Mensagem.channel.bulkDelete(QuantidadeMaxima + 1).catch(error =>{
+                        Mensagem.channel.send(Language.Clear_Time_has_expired)
+                    })
+                }else{
+                    Mensagem.channel.bulkDelete(Quantidade + 1).catch(error =>{
+                        Mensagem.channel.send(Language.Clear_Time_has_expired)
+                    })
+                }
+                break
 
-    Clear:function(Quantidades=0,Canal){
-        Quantidade = parseInt(Quantidades)
-        if (isNaN(Quantidade) || Quantidade > 100 || Quantidade < 1){
-            Canal.send(Language.Clear_ERROR)
+            case 'None':
+
+                break
+            default:
+                break
         }
-        else{
-            
-            Canal.bulkDelete(Quantidade).catch(error =>{
-                Canal.send(Language.Time_has_expired)
-            })
-            
-        }
-        
-
-
     },
+}
 
-    Security:function(UserName,UserID,Mensagem){
-        if (Settings.Web.MySql() == false){
-            return;
-        }else{
-            Settings.Web.MySql().query(`INSERT INTO dados(Nome,UserID,Mensagem) value ("${UserName}",${UserID},"${Mensagem}")`)
-        }
+const Comandos_Privados = {
+    Start:function(Comandos,Mensagem,Client){
+        switch(Comandos){
+            case 'aviso':
+                 var Aviso = Mensagem.content.replace(/\/aviso/i,'').trim()
+                 Client.channels.cache.get(Config.Warning_Chat).send(Aviso);
+                break
+            default:
+                break
+        }     
+
     }
-
 }
 
 
 module.exports = {
     Comandos_Simples,
+    Comandos_Privados,
 }

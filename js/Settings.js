@@ -32,8 +32,8 @@ const Web = {
     
 }
 
+
+
 module.exports={
-    Web
-
-
+    Web,
 }

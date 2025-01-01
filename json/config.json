@@ -1,5 +1,12 @@
 {
     "Prefix":"/",
     "Token":"MTMwMDYyNjc1MDg5NTgxNjc5Ng.Ggzfv5.HUrNQRkqOvebg7I8musNrD1cmPvhqS3IA1xyZc",
-    "Version":"0.0.1"
+    "Version":"0.0.2",
+    "Warning_Chat":"1323527096420532305",
+    "Owners":{
+
+        "Rafael":"974878033997615135",
+        "Noah":"1289687090371493922"
+
+    }
 }
