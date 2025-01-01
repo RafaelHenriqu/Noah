@@ -28,6 +28,10 @@ Client.on("messageCreate",async (Mensagem)=>{
     var Day = new Date().getDate()
     var Jogos = ["Minecraft","Roblox","Noita","Touhou Lunar Nights","Crush Crush","Orange juice","Beecarbonize","Buckshot Roulette","Clone Drone","Outcore","Lethal Company","Super Auto Pets","World Box","Undertale","Peglin","Project Zomboid","Slider","Muck","Oxygen not included","Bloody Hell","Happy Room","Red Dead Redemption","Dave the diver","Dead by daylight","Dead Cells","PayDay 3","Grand Theft Auto V","DayZ","Resident Evil 4","Rust","Grand Theft Auto: San Andreas","Hollow Knight"]
     var Nomes = ["Ukita Akane!!","Ruru","Ruru","Mikage Sakurai","Hinata Hoshino","Bocchi Hitori","Chitose Ikeda","Moriko Morioka","Nayuta Kani","Chiya","Chiya","Chiya","Rize Tedeza","Chino","Mao Amatsuka","Yurika","Kuko","Rito Tsukimi","Tomoe Tachibana","Yoshino Koharu","Mirai Kuriyama","Aoba Suzukaze","Chitose Karasuma","Chitose Karasuma","Kurumi Ebisuzawa","Vignette April Tsukinose","Sylphynford Tachibana","Maki Nishikino","Koume","Yuuko Yoshida","Satsuki","Satsuki"]
+    
+    
+    
+    
     Client.user.setStatus("idle")
     Client.user.setActivity(Jogos[Day - 1])
     Client.user.setUsername(Nomes[Day - 1])
