@@ -71,8 +71,9 @@ const Comandos_Privados = {
                     break
                 }catch{
                     Mensagem.channel.send(Language.Channel_Not_Configured)
-                    break
-            }
+                    break    
+                }
+                break
             case 'configs':
                 Mensagem.channel.send(Language.Configuration_Commands)
                 break
