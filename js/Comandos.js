@@ -1,9 +1,13 @@
+const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus } = require('@discordjs/voice');
+
+
 const Config = require("./Settings")
+const fs = require("fs");
+const path = require('path');
+
 const LoadLanguage = () =>{
     return Language = require(`../json/Language/${Config.ConfigJs.Language}.json`)
 }
-
-
 
 const Comandos_Simples = {
     Start:async function(Comando,Mensagem){
@@ -27,8 +31,26 @@ const Comandos_Simples = {
                 }
                 break
 
-            case 'None':
-
+            case 'join':
+                const Music = fs.readdirSync(path.join(__dirname,"../Sounds/Music/"))
+                const Channel = Mensagem.member.voice
+                const Path = path.join(__dirname,"../Sounds/Music/")
+                const Connection = await joinVoiceChannel({
+                    guildId:Channel.guild.id,
+                    adapterCreator:Channel.channel.guild.voiceAdapterCreator,
+                    channelId:Channel.channel.id,
+                })
+                const Player = createAudioPlayer()
+                Connection.subscribe(Player)
+                var Random = Music[Math.floor(Math.random() * Music.length)]
+                console.log(`${Path}${Random}`)
+                const Resource = await createAudioResource(`${Path}${Random}`) // Adicionar Compatibilidade com outros Formatos Futuramente
+                Player.play(Resource)
+                
+                
+                Player.on(AudioPlayerStatus.Idle,()=>{
+                    Comandos_Simples.Start('join',Mensagem)
+                })
                 break
             default:
                 break

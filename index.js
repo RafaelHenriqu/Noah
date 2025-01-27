@@ -1,8 +1,10 @@
 const Discord = require("discord.js")
+const Voice = require("@discordjs/voice")
 const Client = new Discord.Client({intents:["MessageContent","GuildMessages","Guilds","GuildMembers","AutoModerationConfiguration","AutoModerationExecution","GuildVoiceStates","GuildIntegrations","DirectMessagePolls","DirectMessageTyping"]})
 const Bot_Config = require("./json/Bot_config.json")
 const ComandosJs = require("./js/Comandos")
 const Settings = require("./js/Settings")
+const { createAudioResource } = require("@discordjs/voice")
  
 
 Client.once("ready",(bot)=>{
@@ -37,15 +39,23 @@ Client.on("messageCreate",async (Mensagem)=>{
     Client.user.setUsername(Nomes[Day - 1])
     Client.user.setBanner(`./Imgs/Photons/Benner/${Day}.gif`).then(()=>{}).catch(()=>{})
     Client.user.setAvatar(`./Imgs/Photons/${Day}.gif`).then(()=>{}).catch(()=>{})
-    
+
 
     if (Mensagem.author.bot || Mensagem.content[0] != Bot_Config.Prefix) return;
        
+
+    if(Comando == "abc"){
+
+    }
+    
     ComandosJs.Comandos_Simples.Start(Comando,Mensagem)
     
     if (Object.values(Bot_Config.Owners).includes(Mensagem.author.id)){
         ComandosJs.Comandos_Privados.Start(Comando,Mensagem,Client)
     }
+
+    
+
 
 
 })
