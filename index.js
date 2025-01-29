@@ -43,10 +43,7 @@ Client.on("messageCreate",async (Mensagem)=>{
 
     if (Mensagem.author.bot || Mensagem.content[0] != Bot_Config.Prefix) return;
        
-
-    if(Comando == "abc"){
-
-    }
+    
     
     ComandosJs.Comandos_Simples.Start(Comando,Mensagem)
     
