@@ -30,28 +30,6 @@ const Comandos_Simples = {
                     })
                 }
                 break
-
-            case 'join':
-                const Music = fs.readdirSync(path.join(__dirname,"../Sounds/Music/"))
-                const Channel = Mensagem.member.voice
-                const Path = path.join(__dirname,"../Sounds/Music/")
-                const Connection = await joinVoiceChannel({
-                    guildId:Channel.guild.id,
-                    adapterCreator:Channel.channel.guild.voiceAdapterCreator,
-                    channelId:Channel.channel.id,
-                })
-                const Player = createAudioPlayer()
-                Connection.subscribe(Player)
-                var Random = Music[Math.floor(Math.random() * Music.length)]
-                console.log(`${Path}${Random}`)
-                const Resource = await createAudioResource(`${Path}${Random}`) // Adicionar Compatibilidade com outros Formatos Futuramente
-                Player.play(Resource)
-                
-                
-                Player.on(AudioPlayerStatus.Idle,()=>{
-                    Comandos_Simples.Start('join',Mensagem)
-                })
-                break
             default:
                 break
         }
@@ -60,7 +38,7 @@ const Comandos_Simples = {
 
 const Comandos_Privados = {
     
-    Start:function(Comandos,Mensagem,Client){
+    Start:async function(Comandos,Mensagem,Client){
         const Language = LoadLanguage()
         switch(Comandos){
             case 'setlanguage':
@@ -98,6 +76,27 @@ const Comandos_Privados = {
                 break
             case 'configs':
                 Mensagem.channel.send(Language.Configuration_Commands)
+                break
+            case 'join':
+                const Music = fs.readdirSync(path.join(__dirname,"../Sounds/Music/"))
+                const Channel = Mensagem.member.voice
+                const Path = path.join(__dirname,"../Sounds/Music/")
+                const Connection = await joinVoiceChannel({
+                    guildId:Channel.guild.id,
+                    adapterCreator:Channel.channel.guild.voiceAdapterCreator,
+                    channelId:Channel.channel.id,
+                })
+                const Player = createAudioPlayer()
+                Connection.subscribe(Player)
+                var Random = Music[Math.floor(Math.random() * Music.length)]
+                console.log(`${Path}${Random}`)
+                const Resource = await createAudioResource(`${Path}${Random}`) // Adicionar Compatibilidade com outros Formatos Futuramente
+                Player.play(Resource)
+                
+                
+                Player.on(AudioPlayerStatus.Idle,()=>{
+                    Comandos_Privados.Start('join',Mensagem)
+                })
                 break
             default:
                 break
