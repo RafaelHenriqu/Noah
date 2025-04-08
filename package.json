@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "@discordjs/voice": "^0.18.0",
+    "@distube/ytdl-core": "^4.16.8",
     "discord": "^0.8.2",
     "discord.js": "^14.16.2",
+    "dotenv": "^16.4.7",
     "express": "^4.21.0",
-    "mysql2": "^3.11.3",
-    "universal-code": "^1.0.0"
+    "ini": "^5.0.0",
+    "mysql2": "^3.11.3"
   }
 }
