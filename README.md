@@ -23,15 +23,6 @@ O principal objetivo do Noah é oferecer uma solução prática e eficiente para
   
 Apesar de não haver planos de atualizações imediatas, o projeto está criado e preparado para futuras melhorias.
 
-## Projeto Privado
-
-O projeto Noah é mantido como **privado** no GitHub. Esta decisão foi tomada para assegurar a integridade do bot e possibilitar atualizações e melhorias conforme necessário, especialmente se algum projeto relacionado se tornar popular.
-
-## Como Contribuir
-
-Atualmente, o Noah é um projeto privado, e novas contribuições não estão sendo aceitas. No entanto, feedback é sempre bem-vindo. Caso tenha sugestões ou comentários, sinta-se à vontade para entrar em contato.
-
-
 ## Contato
 
 Para mais informações, entre em contato:
